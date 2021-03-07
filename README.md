@@ -3,9 +3,9 @@
 Structure of a block:
 
     1. Data
-    2. Prev hash
+    2. Prev hash (64 digit hexadecimal number)
     3. Own hash
-    4. Nonce
+    4. Nonce (32 bit number)
     5. Timestamp
 
 _**SHA-256**_  is used: think of this as a maths function f(x)=y, where y can be calculated if x is given, but not vice versa.
@@ -52,3 +52,11 @@ Now some applications are:
 
     I'm gonna keep this short, all of this I just explained above, combine them.
 
+## Nonce Range
+
+    1. Since nonce is a 32 bit number, it'll have 2^32 possibilities and one of them will be of our use.
+    2. And hash is a 64 digit hexadecimal number, so its possibilities are 16^64.
+    3. Following the rules of conditional probability, the probability we'll get both right is 10^-12.
+    4. But that's not it, our block has one more part that we haven't talked about yet, TIMESTAMP.
+    5. It changes every second and along with it, our hash also changes.
+    6. F
